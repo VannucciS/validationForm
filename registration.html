@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Add authorship metadata and link CSS and JS files -->
-    <link rel="stylesheet" href="weeklykitten.css">
+    <link rel="stylesheet" href="/css/weeklykitten.css">
     <title>Lab 5 - JavaScript 1</title>
 </head>
 <body>
     <div class="formcontainer">
-        <h1>Weekly Kitten Pictures Subsription</h1>
+        <h1>Weekly Kitten Pictures Subscription</h1>
         <hr>
         <form action="registration.html" id="form" method="get" onsubmit="return validate(event);">
             <!-- You will need to write the validate function for this form. -->
 
             <div class="textfield">
                 <label for="email">Email Address</label>
-                <input type="text" name="email" id="email" placeholder="e-mail">
+                <input type="text" name="email" id="email" placeholder="Email">
                 <div class="error" id="erroremail"></div>
             </div>
 
@@ -46,50 +46,17 @@
 
             <div class="checkbox">
                 <input type="checkbox" name="terms" id="terms">
-                <label for="terms">I agree to the terms and conditions</label>
+                <label for="terms">I agree to the <a href="http://" target="_blank" rel="noopener noreferrer">terms and conditions.</a></label>
                 <div class="error" id="errorterms"></div>
             </div>
 
-            <button type="submit" id="submitBtn">Sign-Up</button>
-            <button type="reset">Reset</button>
+            <button type="submit" id="submit" class="button">Sign-Up</button>
+            <button type="reset" id="reset" class="button">Reset</button>
 
         </form>
     </div>
     
-    <script>
-        var login = document.getElementById("login")
-        function validate(e)
-        {
-        //login validation section
-            if(login.value==="" || login.value == null || login.value.length < 20)
-        {
-        document.getElementById("errorlogin").innerHTML = "Invalid login";
-        //document.getElementById("errorlogin").innerHTML += login.value.length;
-        }
-
-        //e-mail validation section
-        var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-        var emailText = email.value;
-        var emailTest = emailPattern.test(emailText);
-
-        if(!emailTest) {document.getElementById("erroremail").innerHTML = "The e-mail is not valid."}
-
-        //password validation section
-        var passwordOne = document.getElementById("pass");
-        var passOneValue = passwordOne.value;
-        var passPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/;
-        var passOneTest = passPattern.test(passOneValue);
-        //passOneValue.length < 6 ||
-            if ( !passOneTest ){
-                document.getElementById("errorpassword").innerHTML = "The password should have one uppercase, one lowercase and at least 6 characters."
-                document.getElementById("errorpassword").innerHTML += passOneValue.length
-                
-            }
-
-        e.preventDefault();
-        }
-        
-    </script>
+    <script src="/js/script.JS"></script>
     <noscript>Your browser doesn't support or has disabled JavaScript</noscript>
 
 </body>
